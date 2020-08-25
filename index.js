@@ -26,7 +26,8 @@ app.get('/', (req, res) => {
 })
 
 app.post('/',async (req,res) =>{
- onsole.log("Opening the browser......");
+  try{
+        console.log("Opening the browser......");
         browser = await puppeteer.launch({
             headless: false,
             args: ["--disable-setuid-sandbox"],
