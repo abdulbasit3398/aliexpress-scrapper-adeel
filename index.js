@@ -26,7 +26,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/',async (req,res) =>{
-  const browser = await puppeteer.launch({args: ["--no-sandbox", "--disable-setuid-sandbox"]});
+ onsole.log("Opening the browser......");
+        browser = await puppeteer.launch({
+            headless: false,
+            args: ["--disable-setuid-sandbox"],
+            'ignoreHTTPSErrors': true
+        });
+    } catch (err) {
+        console.log("Could not create a browser instance => : ", err);
+    }
   const page = await browser.newPage();
 
   /** Scrape the aliexpress product page for details */
