@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/',async (req,res) =>{
+    let browser;
   try{
         console.log("Opening the browser......");
         browser = await puppeteer.launch({
