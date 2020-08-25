@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/',async (req,res) =>{
-  const browser = await puppeteer.launch({args: ['--no-sandbox']});
+  const browser = await puppeteer.launch({args: ["--no-sandbox", "--disable-setuid-sandbox"]});
   const page = await browser.newPage();
 
   /** Scrape the aliexpress product page for details */
