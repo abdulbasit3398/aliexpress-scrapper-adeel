@@ -2,7 +2,7 @@ const express = require('express')
 const puppeteer = require('puppeteer');
 const cheerio = require('cheerio');
 const app = express()
-const port = 3000
+const port = 80
 const bodyParser = require('body-parser');
 app.use(bodyParser.json({limit: '50mb'}));
 
@@ -62,7 +62,7 @@ app.post('/',async (req,res) =>{
         data.imageModule.imagePathList) ||
       []
   };
-  console.log(json);
+  // console.log(json);
   res.json(json);
 })
 
